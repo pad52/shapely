@@ -551,6 +551,7 @@ function shapely_get_header_logo(){
  * Get layout class from single page
  * then from themeoptions
  */
+/*
 function shapely_get_layout_class(){
   global $post;                            
   if( is_singular() && get_post_meta($post->ID, 'site_layout', true) ){
@@ -561,10 +562,39 @@ function shapely_get_layout_class(){
   }
   return $layout_class;
 }
+*/
+
+function shapely_get_layout_class(){
+  global $post;                            
+  if( is_singular() || is_woocommerce()  ){
+    $layout_class = 'no-sidebar';
+  }elseif (is_single() || is_archive() || is_home() ) {
+    $layout_class = get_theme_mod( 'shapely_sidebar_position', 'side-right' );
+  }else{
+$layout_class = 'no-sidebar';
+  }
+  return $layout_class;
+}
+
+
 
 /*
  * Show Sidebar or not
- */
+ */ 
+function shapely_show_sidebar(){
+  global $post;
+  if( is_singular() || is_woocommerce() ){
+    $show_sidebar = false;
+  }elseif (is_single() || is_archive() || is_home() ) {
+    $show_sidebar = true;  
+  }else{
+    $show_sidebar = false;  
+  }
+
+  return $show_sidebar;
+} 
+
+/*
 function shapely_show_sidebar(){
   global $post;
   $show_sidebar = true;
@@ -577,7 +607,8 @@ function shapely_show_sidebar(){
       $show_sidebar = false;
   }
   return $show_sidebar;
-}
+} 
+*/
 
 /*
  * Top Callout
@@ -619,6 +650,9 @@ function shapely_top_callout(){
     <?php if ( function_exists('yoast_breadcrumb') ) { ?>
       <div class="container mt20"><?php                        
           yoast_breadcrumb('<p id="breadcrumbs">','</p>'); ?>
+          <div class="language-selector">
+            <?php dynamic_sidebar( 'language_selector' ); ?>
+          </div> <!-- .language-selector --> 
       </div><?php
       }
   }

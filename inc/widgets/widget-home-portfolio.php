@@ -26,12 +26,16 @@ class shapely_home_portfolio extends WP_Widget
      */
     ?>
         <section class="projects bg-dark pb0">
+              <?php if( !empty($title) || !empty($body_content) ){ ?>
               <div class="container">
                 <div class="col-sm-12 text-center">
                     <h3 class="mb32"><?php echo $title; ?></h3>
                     <p class="mb40"><?php echo $body_content; ?></p>
                 </div>
-              </div><?php
+              </div>
+              <?php } ?>
+
+              <?php
 
               $portfolio_args = array(
                   'post_type' => 'jetpack-portfolio',
@@ -59,7 +63,7 @@ class shapely_home_portfolio extends WP_Widget
                             <?php the_post_thumbnail( 'full' ); ?>
                             <div class="title"><?php
                               the_title('<h5 class="mb0">','</h5>');
-
+                              the_excerpt();
                               $project_types = wp_get_post_terms(get_the_ID(), 'jetpack-portfolio-type', array("fields" => "names"));
                               if( !empty( $project_types ) ){
                                 echo '<span>'.implode(' / ',$project_types).'</span>';

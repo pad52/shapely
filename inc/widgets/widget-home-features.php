@@ -39,6 +39,7 @@ class shapely_home_features extends WP_Widget
     ?>
         <section>
           <div class="container">
+            <?php if( !empty($title[0]) || !empty($body_content[0]) ){ ?>
               <div class="row">
                   <div class="col-sm-12 text-center">
                       <h3 class="mb16"><?php echo $title[0]; ?></h3>
@@ -46,6 +47,8 @@ class shapely_home_features extends WP_Widget
                   </div>
               </div>
               <!--end of row-->
+            <?php } ?>
+
               <div class="row"><?php
                 for( $i=1; $i<4; $i++ ){ 
                   if( $title[$i] != '' ) {?>
@@ -769,7 +772,25 @@ class shapely_home_features extends WP_Widget
             'fa-yen(alias)' => 'fa-yen(alias)',
             'fa-youtube' => 'fa-youtube',
             'fa-youtube-play' => 'fa-youtube-play',
-            'fa-youtube-square' => 'fa-youtube-square'
+            'fa-youtube-square' => 'fa-youtube-square',
+            'pb-wifi' => 'pb-wifi',
+            'pb-pb_filled' => 'pb-pb_filled',
+            'pb-rca_left' => 'pb-rca_left',
+            'pb-minijack_right' => 'pb-minijack_right',
+            'pb-rca_right' => 'pb-rca_right',
+            'pb-pb_tech' => 'pb-pb_tech',
+            'pb-smartphone' => 'pb-smartphone',
+            'pb-minijack_left' => 'pb-minijack_left',
+            'pb-jack_right' => 'pb-jack_right',
+            'pb-jack_left' => 'pb-jack_left',
+            'pb-feather' => 'pb-feather',
+            'pb-speaker' => 'pb-speaker',
+            'pb-guitar' => 'pb-guitar',
+            'pb-microphone' => 'pb-microphone',
+            'pb-mixer' => 'pb-mixer',
+            'pb-djconsole' => 'pb-djconsole',
+            'pb-electricguitar' => 'pb-electricguitar',
+            'pb-speaker-alt' =>'pb-speaker-alt'
           );
           foreach( $icons as $icon ) {
                 $all_icons[$icon] = $icon;

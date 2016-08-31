@@ -151,7 +151,7 @@ function shapely_scripts() {
     wp_enqueue_style( 'shapely-icons', get_template_directory_uri().'/inc/css/font-awesome.min.css' );
 
     // Add Google Fonts
-    wp_enqueue_style( 'shapely-fonts', '//fonts.googleapis.com/css?family=Raleway:100,300,400,500,600,700%7COpen+Sans:400,500,600');
+    wp_enqueue_style( 'shapely-fonts', '//fonts.googleapis.com/css?family=Montsterrat:100,300,400,500,600,700%7COpen+Sans:400,500,600');
 
 
     // Add slider CSS

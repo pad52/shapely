@@ -125,4 +125,4 @@ function shapely_social_css(){ ?>
         }
     </style><?php
 }
-add_action( 'wp_head', 'shapely_social_css', 10 );
+//add_action( 'wp_head', 'shapely_social_css', 10 );

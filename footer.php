@@ -36,6 +36,7 @@
       
       <a class="btn btn-sm fade-half back-to-top inner-link" href="#top"><i class="fa fa-angle-up"></i></a>
     </footer><!-- #colophon -->
+    </div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

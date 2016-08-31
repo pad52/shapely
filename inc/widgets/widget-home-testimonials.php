@@ -40,12 +40,16 @@ class shapely_home_testimonial extends WP_Widget
               <div class="parallax-window" data-parallax="scroll" data-image-src="<?php echo $image_src; ?>" style="height: 500px;">
                   <div class="container align-transform">
                       <div class="parallax-text image-bg testimonial">
+                          
+                          <?php if( !empty($title) ){ ?>
                           <div class="row">
                               <div class="col-sm-12 text-center">
                                   <h3><?php echo $title; ?></h3>
                               </div>
                           </div>
                           <!--end of row-->
+                          <?php } ?>
+
                           <div class="row">
                               <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                                   <div class="text-slider slider-arrow-controls text-center relative">

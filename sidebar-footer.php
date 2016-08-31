@@ -36,6 +36,6 @@
 		<?php if ( is_active_sidebar( 'footer-widget-4' ) ) : ?>
 		<div class="col-md-3 col-sm-6 footer-widget" role="complementary">
 			<?php dynamic_sidebar( 'footer-widget-4' ); ?>
-		</div><!-- .widget-area .third -->
+		</div><!-- .widget-area .fourth -->
 		<?php endif; ?>
 	</div>

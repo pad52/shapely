@@ -43,9 +43,11 @@ jQuery(document).ready(function($) {
     // Fix nav to top while scrolling
 
     cl_nav = $('body .nav-container nav:first');
+    //cl_language = $('body .nav-container .language-selector');
+
     cl_navOuterHeight = $('body .nav-container nav:first').outerHeight();
-    window.addEventListener("scroll", updateNav, false);
-    updateNav();
+    //window.addEventListener("scroll", updateNav, false);
+    //updateNav();
     
     
     // Menu dropdown positioning
@@ -197,14 +199,18 @@ jQuery(window).load(function($) {
 /* Function To 
  * keep menu fixed
  **/
+
+ /*
 function updateNav(){
-    if( $(window).scrollTop() > cl_navOuterHeight ){//if href = #element id
+    if( $(window).scrollTop() > (cl_navOuterHeight) ){//if href = #element id
         cl_nav.addClass('fixed scrolled');
+        cl_language.addClass('fixed scrolled');
     }
     else{
         cl_nav.removeClass('fixed scrolled');
+        cl_language.removeClass('fixed scrolled');
     }
-}
+}*/
 
 function masonryFlyIn() {
     var $items = jQuery('.masonryFlyIn .masonry-item');
