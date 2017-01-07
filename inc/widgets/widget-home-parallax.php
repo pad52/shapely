@@ -40,7 +40,7 @@ class shapely_home_parallax extends WP_Widget
     ?>
         <section class="<?php echo $class1; ?>" ><?php
             if( ( $image_pos == 'background-full' || $image_pos == 'background-small' ) && $image_src != '' ) { ?>
-            <div class="parallax-window <?php echo $class7; ?>" data-parallax="scroll" data-image-src="<?php echo $image_src; ?>">
+            <div class="parallax-window <?php echo $class7; ?>" data-parallax="scroll" data-image-src="<?php echo esc_url( $image_src ); ?>">
                <div class="<?php echo ( $image_pos == 'background-full' ) ? 'align-transform' : ''; ?>"><?php
             }
             else { ?>
@@ -52,7 +52,7 @@ class shapely_home_parallax extends WP_Widget
                       <?php
                         if( ( $image_pos == 'left' || $image_pos == 'top' ) && $image_src != ''){ ?>
                         <div class="<?php echo $class6; ?>">
-                              <img class="cast-shadow" alt="<?php echo $title; ?>" src="<?php echo $image_src; ?>">
+                              <img class="cast-shadow" alt="<?php echo $title; ?>" src="<?php echo esc_url( $image_src ); ?>">
                         </div><?php
                       } ?>
 
@@ -68,7 +68,7 @@ class shapely_home_parallax extends WP_Widget
                       <?php
                         if( ( $image_pos == 'right' || $image_pos == 'bottom' ) && $image_src != ''){ ?>
                         <div class="<?php echo $class5; ?>">
-                              <img class="cast-shadow" alt="<?php echo $title; ?>" src="<?php echo $image_src; ?>">
+                              <img class="cast-shadow" alt="<?php echo $title; ?>" src="<?php echo esc_url( $image_src ); ?>">
                         </div><?php
                       } ?>
                 </div>
@@ -177,7 +177,7 @@ class shapely_home_parallax extends WP_Widget
 	public function update( $new_instance, $old_instance ) {
 		$instance = array();
 		$instance['title'] = ( ! empty( $new_instance['title'] ) ) ? esc_html( $new_instance['title'] ) : '';
-		$instance['image_src'] = ( ! empty( $new_instance['image_src'] ) ) ? esc_url( $new_instance['image_src'] ) : '';
+		$instance['image_src'] = ( ! empty( $new_instance['image_src'] ) ) ? esc_url_raw( $new_instance['image_src'] ) : '';
 		$instance['image_pos'] = ( ! empty( $new_instance['image_pos'] ) ) ? esc_html( $new_instance['image_pos'] ) : '';
 		$instance['body_content'] = ( ! empty( $new_instance['body_content'] ) ) ? wp_kses_post( $new_instance['body_content'] ) : '';
 		$instance['button1'] = ( ! empty( $new_instance['button1'] ) ) ? esc_html( $new_instance['button1'] ) : '';
