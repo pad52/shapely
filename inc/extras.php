@@ -576,7 +576,7 @@ function shapely_get_header_logo() {
  * Get layout class from single page
  * then from themeoptions
  */
-/*
+
 function shapely_get_layout_class() {
 	if ( is_singular() ) {
 		$template     = get_page_template_slug();
